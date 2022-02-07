@@ -9,15 +9,6 @@
         <div class="field-body">
           <div class="field">
             <p class="control is-expanded has-icons-left">
-              <%= f.input_field :fullname, class: 'input is-small', placeholder: 'Full Name' %>
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
-              <%= render  partial: "error_handler", locals: { source: :fullname } %>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control is-expanded has-icons-left">
               <%= f.input_field :email, class: 'input is-small', placeholder: 'example@hotmail.com' %>
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
