@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'posts#index'
+
+  devise_for :users
+  resources :users, only: [:index, :show] 
+  resources :posts do
+    post '/like', to: 'reactions#like', as: :like_action
+    post '/dislike', to: 'reactions#dislike', as: :dislike_action
+    resources :comments
+  end
 end
