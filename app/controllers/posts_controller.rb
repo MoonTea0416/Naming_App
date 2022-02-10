@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @posts = current_user.friends_and_own_posts
+    # @posts = current_user.friends_and_own_posts
     @post = Post.new
   end
 
