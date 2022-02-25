@@ -1,4 +1,4 @@
-class Reaction < ApplicationRecord   
-      belongs_to :user
-      belongs_to :post
+class Reaction < ApplicationRecord
+  belongs_to :upuser
+  belongs_to :post
 end
