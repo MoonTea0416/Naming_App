@@ -9,6 +9,9 @@ class User < ApplicationRecord
       has_many :reactions, dependent: :destroy
       has_many :comments, dependent: :destroy
 
+      has_one_attached :avatar
+      has_one_attached :cover_picture
+
       validates :username, presence: true, uniqueness: true, length: { in: 3..15 }
       validates :email, presence: true, uniqueness: true, format: Devise.email_regexp
       validates :gender, presence: true

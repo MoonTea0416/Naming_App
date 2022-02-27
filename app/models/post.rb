@@ -7,4 +7,6 @@ class Post < ApplicationRecord
 
   validates :user_id, presence: true
   validates :text, presence: true, length: { in: 1..200 }
+
+  
 end

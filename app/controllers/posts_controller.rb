@@ -2,17 +2,17 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    # @posts = current_user.friends_and_own_posts
+    @posts = Post.all.order('created_at DESC')
     @post = Post.new
-  end
+   end
 
   def create
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to request.referrer, notice: 'post created successfully'
+      redirect_to request.referrer, notice: 'Your post was created! yahoo!'
     else
-      redirect_to request.referrer, alert: 'post was not created, for some reason'
+      redirect_to request.referrer, alert: 'Sorry, post was not created, for some reason'
     end
   end
 
