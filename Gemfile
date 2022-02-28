@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.3'
 
 gem 'devise'
+gem 'bulma-rails', '~> 0.8.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'image_processing'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

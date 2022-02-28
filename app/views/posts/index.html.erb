@@ -40,7 +40,7 @@
                 <% end %>
                 <div class="post-data">
                   <%= link_to user_path(post.user), class: "has-text-black underline" do %>
-                    <span class="name"><%= post.user.fullname %></span>
+                    <span class="name"><%= post.user.username %></span>
                   <% end %>
                   <span class="username">@<%= post.user.username %></span>
                   <span class="date">
