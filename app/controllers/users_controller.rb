@@ -36,8 +36,4 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user), alert: 'cover iamge wasn\'t updated for some reason.'
     end
   end
-
-  def new_friends
-    @unread_messages = check_if_there_is_new_messages(current_user)
-  end
 end

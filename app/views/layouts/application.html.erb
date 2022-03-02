@@ -15,11 +15,8 @@
       <nav class="nav-bar md-display-none">
         <div class="nav-bar-content">
           <a class="logo-container" href="/">
-            <span class="nav-logo">
-              <i class="fab fa-bimobject"></i>
-            </span>
             <span class="logo-text">
-              NamingApp
+              Naming Your Life
             </span>
           </a>
           <% if user_signed_in? %>
@@ -27,12 +24,6 @@
             <%= link_to 'New Members', users_path, class: 'nav-bar-item shrink-non' %>
            <% end %>
         </div>
-        <% if user_signed_in? %>
-          <div class="search-bar">
-            <input type="text" class="input" placeholder="Search">
-            <i class="fa fa-search"></i>
-          </div>
-        <% end %>
         <div class="shrink-non">
           <% if user_signed_in? %>
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
