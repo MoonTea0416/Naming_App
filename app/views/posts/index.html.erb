@@ -12,7 +12,7 @@
             <%= f.text_area :text, label: 'name', placeholder: 'Looking for some naming idea?', class:"textarea post-area" %>
             <div id="image-upload-js" class="file has-name">
               <label class="file-label">
-                <%= f.file_field :image, class: 'file-input' %>
+                <%= f.file_field :image %>
                 <span class="file-cta">
                   <span class="file-icon">
                     <i class="fa fa-image"></i>
@@ -75,6 +75,33 @@
                 <%= image_tag post.image %>
               </div>
             <% end %>
+
+            <div class="reaction-container">
+              <% if user_signed_in? %>
+                <div class="likes">
+                  <span class="<% if post.liked(current_user) %><%= 'has-text-base' %><% end %>"><%= post.likes %></span>
+                  <%= link_to post_like_action_path(post), method: :post do %>
+                    <i class="fas fa-thumbs-up <% if post.liked(current_user) %><%= 'has-text-base' %><% end %>"></i>
+                  <% end %>
+                </div>
+                <div class="dislikes">
+                  <span class="<% if post.disliked(current_user) %><%= 'has-text-base' %><% end %>"><%= post.dislikes %></span>
+
+                  <%= link_to post_dislike_action_path(post), method: :post do %>
+                    <i class="fas fa-thumbs-down <% if post.disliked(current_user) %><%= 'has-text-base' %><% end %>"></i> 
+                  <% end %>
+                </div>
+              <% end %>
+              <div class="comments">
+                <span><%= post.comments.length %></span> 
+                <% if post.comments.length == 1  %>
+                  Comment
+                <% else %>
+                  Comments
+                <% end %>
+              </div>
+            </div>
+
           </div>
         <% end %>
       </div>

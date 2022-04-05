@@ -19,10 +19,6 @@
               Naming Your Life
             </span>
           </a>
-          <% if user_signed_in? %>
-            <%= link_to 'TimeLine', root_path, class: 'nav-bar-item shrink-non' %>
-            <%= link_to 'New Members', users_path, class: 'nav-bar-item shrink-non' %>
-           <% end %>
         </div>
         <div class="shrink-non">
           <% if user_signed_in? %>
