@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <div id="user-id" data-user-id="<%= current_user.try(:id) %>"></div>
+    <% if current_user %>
+      <div id='user-avatar' hidden='true'>
+        <%= render partial: 'user_image', locals: { user: current_user } %>
+      </div>
+    <% end %>
       <nav class="nav-bar md-display-none">
         <div class="nav-bar-content">
           <a class="logo-container" href="/">
