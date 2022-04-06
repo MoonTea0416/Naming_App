@@ -73,15 +73,6 @@ document.addEventListener('turbolinks:load', () => {
     })
   }
 
-  if (messages_body){
-    messages_body.scrollTo(0,
-      document.querySelector(".messages-body").scrollHeight);
-  }
-
-  message_menu.addEventListener('click', (e) => {
-    e.target.classList.remove('message_notice')
-  });
-
   if(fileInput) {
     fileInput.onchange = () => {
       if (fileInput.files.length > 0) {
@@ -129,17 +120,6 @@ document.addEventListener('turbolinks:load', () => {
       }
     }
   }
-
-  // burger menu JS code
-  const menu = document.querySelector('.menu');
-  const btn = menu.querySelector('.nav-tgl');
-  btn.addEventListener('click', evt => {
-    if (menu.className.indexOf('active') === -1) {
-      menu.classList.add('active');
-    } else {
-      menu.classList.remove('active');
-    }
-  })
 
   const reaction_containers = document.querySelectorAll('.reaction-container');
   if (reaction_containers) {
