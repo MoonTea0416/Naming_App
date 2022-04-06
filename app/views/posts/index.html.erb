@@ -101,7 +101,15 @@
                 <% end %>
               </div>
             </div>
+            <div class="comments-container">
+              <% post.comments.each do |comment| %>
+                <%= render partial: 'comments/comment', locals: { post: post, comment: comment } %>
+              <% end %>
+            </div>
 
+            <% if user_signed_in? %>
+              <%= render partial: 'comments/form', locals: { post: post } %>
+            <% end %>
           </div>
         <% end %>
       </div>

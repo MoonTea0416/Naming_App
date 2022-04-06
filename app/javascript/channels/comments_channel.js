@@ -10,8 +10,8 @@ consumer.subscriptions.create("CommentsChannel", {
   },
 
   received(data) {
-    const user_avatar = document.getElementById('user-avatar').querySelector('.profile-image');
-    const avatar = user_avatar.getAttribute('src');
+    // const user_avatar = document.getElementById('user-avatar').querySelector('.profile-image');
+    // const avatar = user_avatar.getAttribute('src');
     const post = document.getElementById('post-'+data.post.id);
 
     if (post) {
@@ -29,11 +29,6 @@ consumer.subscriptions.create("CommentsChannel", {
       const comment = `
       <div class="comment-container">
         <div class="comment">
-          <div class="user-avatar">
-            <a href="/users/${data.user.id}">
-              <img class="profile-image" src="${avatar}">
-            </a>
-          </div>
           <div class="comment-body">
             <div class="flex">
               <span class="user-name">${data.user.username}</span>
