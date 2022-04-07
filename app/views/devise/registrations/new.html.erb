@@ -33,45 +33,6 @@
       <div class="field is-horizontal">
         <div class="field-body">
           <div class="field">
-            <p class="control is-expanded has-icons-left">
-              <div id="image-upload-js" class="file has-name">
-                <label class="file-label">
-                  <%= f.file_field :avatar, class: 'file-input' %>
-                  <span class="file-cta">
-                    <span class="file-icon">
-                      <i class="fa fa-image"></i>
-                    </span>
-                    <span class="file-name has-text-grey-light">
-                      profile picture
-                    </span>
-                  </span>
-                </label>
-              </div>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control is-expanded has-icons-left">
-              <div id="image-upload-js-2" class="file has-name">
-                <label class="file-label">
-                  <%= f.file_field :cover_picture, class: 'file-input' %>
-                  <span class="file-cta">
-                    <span class="file-icon">
-                      <i class="fa fa-image"></i>
-                    </span>
-                    <span class="file-name has-text-grey-light">
-                      cover picture
-                    </span>
-                  </span>
-                </label>
-              </div>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="field is-horizontal">
-        <div class="field-body">
-          <div class="field">
             <div class="control">
               <%= f.text_area :bio, class: 'textarea is-small', as: :text, :input_html => { :cols => 5, :rows => 10 }, placeholder: 'Bio: I\'m nice guy invite me to have fun' %>
               <%= render partial: "error_handler", locals: { source: :bio } %>
