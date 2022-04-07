@@ -19,11 +19,6 @@
         </div>
       </div>
 
-      <div class="field radio-group">
-        <%= f.input :gender, as: :radio_buttons, collection: [['male', 'male'], ['female', 'female'],['other', 'other']], checked: ['male', 'male'], class: 'input' %>
-        <%= render partial: "error_handler", locals: { source: :gender } %>
-      </div>
-
       <div class="field is-horizontal">
         <div class="field-body">
           <div class="field">
