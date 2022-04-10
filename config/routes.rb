@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :posts do
     post '/like', to: 'reactions#like', as: :like_action
     post '/dislike', to: 'reactions#dislike', as: :dislike_action
-    resources :comments
+    resources :comments do
+      post '/support', to: 'votes#support', as: :support_action
+      post '/nonsupport', to: 'votes#nonsupport', as: :nonsupport_action
+    end
   end
 end

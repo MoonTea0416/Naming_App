@@ -158,6 +158,44 @@ document.addEventListener('turbolinks:load', () => {
     })
   }
 
+
+  const vote_containers = document.querySelectorAll('.vote-container');
+  if (vote_containers) {
+    Array.prototype.slice.call(vote_containers).forEach((container) => {
+      const vote_buttons = container.querySelectorAll('.supports, .nonsupports');
+      const support_items = vote_buttons[0].querySelectorAll('span, i');
+      const nonsupport_items = vote_buttons[1].querySelectorAll('span, i');
+
+      const vote = (support_items, nonsupport_items) => {
+        if ( support_items[0].classList.contains('has-text-base') ) {
+          support_items[0].classList.remove('has-text-base');
+          support_items[1].classList.remove('has-text-base');
+          support_items[0].innerText = Number(support_items[0].innerText) - 1;
+        }else {
+          support_items[0].classList.add('has-text-base');
+          support_items[1].classList.add('has-text-base');
+          support_items[0].innerText = Number(support_items[0].innerText) + 1;
+          
+          if (nonsupport_items[0].classList.contains('has-text-base')) {
+            nonsupport_items[0].classList.remove('has-text-base');
+            nonsupport_items[1].classList.remove('has-text-base');
+            nonsupport_items[0].innerText = Number(nonsupport_items[0].innerText) - 1;
+          }
+        }
+      }
+
+      container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('fas') && e.target.parentNode.parentNode.classList.contains('supports')) {
+          vote(support_items, nonsupport_items);
+        }
+        
+        if (e.target.classList.contains('fas') && e.target.parentNode.parentNode.classList.contains('nonsupports')) {
+          vote(nonsupport_items, support_items);
+        }
+      });
+    })
+  }
+
   const comment_container = document.querySelectorAll('.comment-container');
   if (comment_container) {
     Array.prototype.slice.call(comment_container).forEach((container) => {
