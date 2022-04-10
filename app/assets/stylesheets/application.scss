@@ -809,6 +809,59 @@ body {
         }
       }
 
+      .vote-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        .supports {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: end;
+              -ms-flex-align: end;
+                  align-items: flex-end;
+          color: rgb(247, 202, 21);
+
+          .has-text-base {
+            color: $base-color;
+          }
+        }
+        
+        .nonsupports {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: end;
+              -ms-flex-align: end;
+                  align-items: flex-end;
+          color: rgb(247, 202, 21);
+
+
+          .has-text-base {
+            color: $base-color;
+          }
+
+          a {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+          }
+        }
+        
+        a {
+          color: gray;
+          .fas {
+            padding: 0 5px;
+          }
+
+        }
+      }
+
       .comment-form {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -868,7 +921,7 @@ body {
           .comment-body {
             background-color: rgba(224, 224, 224, 0.26);
             border-radius: 30px;
-            width: 100%;
+            width: auto;
             padding: 5px 15px;
             display: -webkit-box;
             display: -ms-flexbox;
