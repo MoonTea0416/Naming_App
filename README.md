@@ -1,24 +1,22 @@
-# README
+A well-defined web app using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User can: 
 
-Things you may want to cover:
+•  log in using an email and password
 
-* Ruby version
+•  sign up and building up user profile
 
-* System dependencies
+•  find back/reset password 
 
-* Configuration
+•  share a post, delete and edit  their own posts
 
-* Database creation
+•  like, dislike and leave comment on a post
 
-* Database initialization
+•  support, nonsupport other’s comment
 
-* How to run the test suite
+•  generate a unique avatar 
 
-* Services (job queues, cache servers, search engines, etc.)
+•  view others’ profiles 
 
-* Deployment instructions
+•  modify personal information
 
-* ...
